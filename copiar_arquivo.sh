@@ -1,7 +1,4 @@
 #!/bin/bash
-# Inicializa o SSH
-/usr/sbin/sshd
-
 echo "[!] Aguardando.."
 sleep 10 # espera a inicialização do contêiner fedora
 echo "[!] Iniciando transferência de arquivo"
