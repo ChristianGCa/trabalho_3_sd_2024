@@ -1,0 +1,40 @@
+Grupo: Christian Gabriel Candeloni, Gabriel Klein, Gabriel Plagens
+
+SSH entre containers (Ubuntu e Fedora)
+
+Este projeto utiliza dois containers com duas distros linux diferentes, onde
+o container com Ubuntu está configurado como cliente SSH e container do Fedora
+como servidor SSH. A proposta é transferir um arquivo do Ubuntu para o Fedora
+via SCP automaticamente, após a inicialização dos mesmos.
+
+OBS: Certifique-se de ter o docker e o docker-compose instalados em seu
+sistema.
+
+PASSOS
+
+(1) Criar as imagens
+
+Navegue até o diretório principal (/christian_gabriel_candeloni) e execute:
+
+$ docker-compose build
+
+(2) Criar e iniciar os containers:
+
+$ docker-compose up
+
+(3) Verificar a transferência do arquivo
+
+Primeiro, acesse o container do Fedora:
+
+$ docker exec -it fedora_ssh_container /bin/bash
+
+Feito isso, espere a transferência do arquivo ser finalizada (terminal onde
+foi executado os containers) e de o comando de listar arquivos:
+
+$ ls
+
+Observe que teremos um "arquivo.txt" aparecendo na listagem.
+
+(4) Verificar conteúdo do arquivo
+
+$ cat arquivo.txt
